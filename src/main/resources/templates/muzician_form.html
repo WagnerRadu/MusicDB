@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add New Muzician</title>
+    <link rel="stylesheet" href="/theme.css" type="text/css">
+</head>
+<body >
+<div class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="text-center">Adauga muzician<br></h1>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="py-5" style="">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <form id="c_form-h" class="" th:action="@{/muzicieni/save}" method="post" th:object="${muzician}">
+                    <div class="form-group row"> <label class="col-2 col-form-label">Nume</label>
+                        <div class="col-10">
+                            <input type="text" class="form-control" placeholder="ex: Georgescu" th:field="*{nume}"> </div>
+                    </div>
+                    <div class="form-group row"> <label class="col-2 col-form-label">Prenume</label>
+                        <div class="col-10">
+                            <input type="text" class="form-control" placeholder="ex: George" th:field="*{prenume}"> </div>
+                    </div>
+                    <div class="form-group row"> <label class="col-2 col-form-label">Gen</label>
+                        <div class="col-10">
+                            <input type="text" class="form-control" placeholder="ex: experimental" th:field="*{gen_muzical}"> </div>
+                    </div>
+                    <div class="form-group row"> <label class="col-2 col-form-label">Data nasterii</label>
+                        <div class="col-10">
+                            <input type="date" class="form-control" placeholder="ex: " th:field="*{data_nasterii}"> </div>
+                    </div>
+                    <div class="form-group row"> <label class="col-2 col-form-label">Tara</label>
+                        <div class="col-10">
+                            <input type="text" class="form-control" placeholder="ex: Serbia" th:field="*{tara}"> </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 text-right"><button type="submit" class="btn btn-primary">Adauga</button></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="text-center"><a th:href="@{/muzicieni}" class="btn btn-outline-primary"><b>Afiseaza</b></a></div>
+<br>
+<div class="text-center"><a th:href="@{/}" class="btn btn-outline-primary"><b>Home</b></a></div>
+
+</body>
+</html>

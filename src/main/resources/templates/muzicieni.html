@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="/theme.css" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Muzicieni</title>
+</head>
+<body>
+<div class="text-center py-0 pt-5" >
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="">Tabel muzicieni<br></h1>
+        </div>
+    </div>
+</div>
+<div style="" class="pt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="table-responsive">
+
+                    <table class="table table-bordered text-center">
+                        <thead class="thead-dark">
+
+                        <tr>
+                            <!--<th>idmuzician</th>-->
+                            <th>Nume</th>
+                            <th>Prenume</th>
+                            <th>Gen</th>
+                            <th>Data nasterii</th>
+                            <th>Tara</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <th:block th:each="muzician : ${muzicianList}">
+                            <tr>
+                               <!-- <td>[[${muzician.idmuzician}]]</td> -->
+                                <td>[[${muzician.nume}]]</td>
+                                <td>[[${muzician.prenume}]]</td>
+                                <td>[[${muzician.gen_muzical}]]</td>
+                                <td>[[${muzician.data_nasterii}]]</td>
+                                <td>[[${muzician.tara}]]</td>
+                                <td class="text-center">
+                                    <a class="h4" th:href="@{'/muzicieni/edit/'+ ${muzician.idmuzician}}">Editeaza</a>
+                                </td>
+                                <td class="text-center">
+                                    <a class="h4" th:href="@{'/muzicieni/delete/'+ ${muzician.idmuzician}}">Sterge</a>
+                            </tr>
+                        </th:block>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-right"><a class="btn btn-primary" th:href="@{'/muzicieni/add'}">Adauga muzician<br></a></div>
+        </div>
+    </div>
+</div>
+<div class="text-center"><a th:href="@{/}" class="btn btn-outline-primary"><b>Home</b></a></div>
+</body>
+</html>

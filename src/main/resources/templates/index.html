@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="https://static.pingendo.com/bootstrap/bootstrap-4.3.1.css">
+    <title>MusicDB</title>
+</head>
+<body>
+
+<div>
+    <div class="container text-center">
+        <br><br><br><br><br><br><br><br>
+        <div class="row">
+            <div class="bg-white p-5 mx-auto col-md-8 col-10">
+                <h3 class="display-3 text-center">MusicDB</h3>
+                <p class="mb-3 lead"></p>
+                <a class="btn btn-outline-primary btn-lg px-4" th:href="@{/melodii}">Melodii</a>
+                <a class="btn btn-outline-primary btn-lg px-3" th:href="@{/muzicieni}">Muzicieni</a>
+                <a class="btn btn-outline-primary btn-lg" th:href="@{/interpretari}" >Interpretari</a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>

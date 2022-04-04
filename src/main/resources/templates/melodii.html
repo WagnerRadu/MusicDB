@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="/theme.css" type="text/css">
+    <title>Tabel melodii</title>
+</head>
+
+<body>
+<div class="text-center py-0 pt-5" >
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="">Tabel melodii<br></h1>
+            </div>
+        </div>
+    </div>
+</div>
+<div style="" class="pt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="table-responsive">
+
+                    <table class="table table-bordered text-center">
+                        <thead class="thead-dark">
+
+                        <tr>
+                            <!--<th>idmelodie</th>-->
+                            <th>Nume</th>
+                            <th>Durata</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <th:block th:each="melodie : ${melodieList}">
+                        <tr>
+                            <!--<td>[[${melodie.idmelodie}]]</td>-->
+                            <td>[[${melodie.nume}]]</td>
+                            <td>[[${melodie.durata}]] sec</td>
+                            <td class="text-center">
+                                <a class="h4" th:href="@{'/melodii/edit/'+ ${melodie.idmelodie}}">Editeaza</a>
+                            </td>
+                            <td class="text-center">
+                                <a class="h4" th:href="@{'/melodii/delete/'+ ${melodie.idmelodie}}">Sterge</a>
+                            </td>
+                        </tr>
+                        </th:block>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-right"><a class="btn btn-primary" th:href="@{'/melodii/add'}">Adauga melodie<br></a></div>
+        </div>
+    </div>
+</div>
+
+
+<div class="text-center"><a th:href="@{/}" class="btn btn-outline-primary"><b>Home</b></a></div>
+</body>
+
+</html>

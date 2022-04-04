@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="https://static.pingendo.com/bootstrap/bootstrap-4.3.1.css">
+</head>
+
+<body >
+<div class="text-center py-0 pt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="">Tabel interpretari<br></h1>
+            </div>
+        </div>
+    </div>
+</div>
+<div style="" class="pt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12" style="">
+                <div class="table-responsive">
+                    <table class="table table-bordered text-center">
+                        <thead class="thead-dark">
+                        <tr>
+                           <!-- <th>idinterpretare</th>
+                            <th>idmuzician</th>
+                            <th>idmelodie</th> -->
+                            <th>Nume muzician</th>
+                            <th>Prenume muzician</th>
+                            <th>Nume melodie</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <th:block th:each="interpretare : ${interpretareList}">
+                        <tr>
+                           <!-- <td>[[${interpretare.idinterpretare}]]</td>
+                            <td>[[${interpretare.muzician.idmuzician}]]</td>
+                            <td>[[${interpretare.melodie.idmelodie}]]</td> -->
+                            <td>[[${interpretare.muzician.nume}]]</td>
+                            <td>[[${interpretare.muzician.prenume}]]</td>
+                            <td>[[${interpretare.melodie.nume}]]</td>
+                            <td class="text-center">
+                                <a class="h4" th:href="@{'/interpretari/edit/'+ ${interpretare.idinterpretare}}">Editeaza</a>
+                            </td>
+                            <td class="text-center">
+                                <a class="h4" th:href="@{'/interpretari/delete/'+ ${interpretare.idinterpretare}}">Sterge</a>
+                            </td>
+                        </tr>
+                        </th:block>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-right"><a class="btn btn-primary" th:href="@{'/interpretari/add'}">Adauga interpretare<br></a></div>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<div class="text-center"><a th:href="@{/}" class="btn btn-outline-primary"><b>Home</b></a></div>
+</body>
+
+</html>
